@@ -15,6 +15,7 @@ const missingMessageErrors = {}
  * @returns {null|string} - The localized message
  */
 export const getMessage = (localeCode, localeMessages, key, substitutions) => {
+
   if (!localeMessages) {
     return null
   }
@@ -29,11 +30,11 @@ export const getMessage = (localeCode, localeMessages, key, substitutions) => {
         }
       }
     } else if (!warned[localeCode] || !warned[localeCode][key]) {
-      if (!warned[localeCode]) {
-        warned[localeCode] = {}
-      }
-      warned[localeCode][key] = true
-      log.warn(`Translator - Unable to find value of key "${key}" for locale "${localeCode}"`)
+      // if (!warned[localeCode]) {
+      //   warned[localeCode] = {}
+      // }
+      // warned[localeCode][key] = true
+      // log.warn(`Translator - Unable to find value of key "${key}" for locale "${localeCode}"`)
     }
     return null
   }

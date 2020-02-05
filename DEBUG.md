@@ -1,5 +1,16 @@
 # chrome://extensions/?errors
 
+> Warning: componentWillMount has been renamed, and is not recommended for use
+
+npx react-codemod rename-unsafe-lifecycles
+
+[（注意：这里使用的是 npx，不是 npm ，npx 是 Node 6+ 默认提供的实用程序。）](https://segmentfault.com/a/1190000020074818)
+运行 codemod 将会替换旧的生命周期，如 componentWillMount 将会替换为 UNSAFE_componentWillMount
+
+> Translator - Unable to find value of key "localhost" for locale "zh_TW"
+
+ui\app\helpers\utils\i18n-helper.js
+
 > WebSocket connection to 'ws://localhost:8097/' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED
 
 此錯誤由 ui.js 載入 require-react-devtools.js  `require('react-devtools')` 造成
