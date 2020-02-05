@@ -52,10 +52,10 @@ function gulpParallel (...args) {
 }
 
 const browserPlatforms = [
-  'firefox',
+  //'firefox',
   'chrome',
-  'brave',
-  'opera',
+  //'brave',
+  //'opera',
 ]
 const commonPlatforms = [
   // browser extensions
@@ -281,9 +281,9 @@ gulp.task('copy',
 gulp.task('dev:copy',
   gulp.series(
     gulp.parallel(...copyDevTaskNames),
-    'manifest:dev',
+    //'manifest:dev',
     'manifest:chrome',
-    'manifest:opera'
+    //'manifest:opera'
   )
 )
 
@@ -381,7 +381,7 @@ function createTasksForBuildJsDeps ({ key, filename }) {
   const destinations = browserPlatforms.map(platform => `./dist/${platform}`)
 
   const bundleTaskOpts = Object.assign({
-    buildSourceMaps: true,
+    buildSourceMaps: false, // true
     sourceMapDir: '../sourcemaps',
     minifyBuild: true,
     devMode: false,
@@ -405,7 +405,7 @@ function createTasksForBuildJsExtension ({ buildJsFiles, taskPrefix, devMode, te
   const buildPhase2 = nonInpageFiles
   const destinations = browserPlatforms.map(platform => `./dist/${platform}`)
   bundleTaskOpts = Object.assign({
-    buildSourceMaps: true,
+    buildSourceMaps: false, // true
     sourceMapDir: '../sourcemaps',
     minifyBuild: !devMode,
     buildWithFullPaths: devMode,
@@ -469,6 +469,7 @@ gulp.task('dev:extension',
     'clean',
     'dev:scss',
     gulp.parallel(
+      'build:extension:js:deps:background', //build bg-libs.js
       'dev:extension:js',
       'dev:copy',
       'dev:reload'
