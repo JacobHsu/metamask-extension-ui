@@ -16,4 +16,31 @@ function generateBundler
     //   }
       browserifyOpts['entries'] = [opts.filepath] 
     }
-````
+```
+
+> WebSocket connection to 'ws://localhost:8000/socketcluster/' failed WebSocket is closed before the connection is established.
+
+嘗試連結 remote-redux-devtools
+
+ui\app\store\store.js
+
+```js
+export default function configureStore (initialState) {
+  // const composeEnhancers = composeWithDevTools({
+  //   name: 'MetaMask',
+  //   hostname: 'localhost',
+  //   port: 8000,
+  //   realtime: Boolean(process.env.METAMASK_DEBUG),
+  // })
+  // return createStore(rootReducer, initialState, composeEnhancers(
+  //   applyMiddleware(
+  //     thunkMiddleware,
+  //   ),
+  // ))
+  return createStore(rootReducer, initialState, 
+    applyMiddleware(
+      thunkMiddleware,
+    )
+  )
+}
+```
