@@ -2,6 +2,11 @@
 
 > Warning: componentWillMount has been renamed, and is not recommended for use
 
+[`componentWillMount` warnings although no explicitly used](https://stackoverflow.com/questions/58769752/componentwillmount-warnings-although-no-explicitly-used)
+
+app\scripts\ui.js `console.warn = () => {}` 關閉警告
+
+
 npx react-codemod rename-unsafe-lifecycles
 
 [（注意：这里使用的是 npx，不是 npm ，npx 是 Node 6+ 默认提供的实用程序。）](https://segmentfault.com/a/1190000020074818)

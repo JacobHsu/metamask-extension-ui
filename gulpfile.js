@@ -470,6 +470,7 @@ gulp.task('dev:extension',
     'dev:scss',
     gulp.parallel(
       'build:extension:js:deps:background', //build bg-libs.js
+      'build:extension:js:deps:ui', //build ui-libs.js
       'dev:extension:js',
       'dev:copy',
       'dev:reload'

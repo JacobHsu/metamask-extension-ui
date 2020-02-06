@@ -1,4 +1,6 @@
 
+console.warn = () => {}
+
 // this must run before anything else
 import './lib/freezeGlobals'
 
@@ -56,6 +58,7 @@ async function start () {
   global.METAMASK_UI_TYPE = windowType
   closePopupIfOpen(windowType)
 
+console.log('[ui.js] windowType', windowType)
   // setup stream to background
   const extensionPort = extension.runtime.connect({ name: windowType })
   const connectionStream = new PortStream(extensionPort)
