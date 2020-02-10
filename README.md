@@ -97,3 +97,7 @@ remove vendor/trezor
     }
   ],
 ```
+
+## References
+
+[gulp-livereload](http://kejyun.github.io/gulp-learning-notes/plguins/Tool/Plugins-Tool-gulp-livereload.html)

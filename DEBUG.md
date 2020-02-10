@@ -1,5 +1,11 @@
 # chrome://extensions/?errors
 
+> MetamaskContentscript - lost connection to MetaMask Background Multiplex
+WebSocket+connection+to+%27ws://localhost:35729/livereload%27
+
+app\scripts\chromereload.js 的 this.socket = new this.WebSocket(this._uri) 沒啟用
+
+
 > Warning: componentWillMount has been renamed, and is not recommended for use
 
 [`componentWillMount` warnings although no explicitly used](https://stackoverflow.com/questions/58769752/componentwillmount-warnings-although-no-explicitly-used)
