@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 
 
 // init
-import FirstTimeFlow from '../first-time-flow'
+// import FirstTimeFlow from '../first-time-flow'
 // other views
 import Home from '../home'
 // Authenticated 定義了 Redirect 至 INITIALIZE_ROUTE = '/initialize'

@@ -2,13 +2,16 @@ import React from 'react'
 import Routes from './routes'
 import { Provider } from 'react-redux'
 import { HashRouter } from 'react-router-dom'
+import I18nProvider from '../helpers/higher-order-components/i18n-provider'
 
 const Index = props => {
     const { store } = props
     return (
         <Provider store={store}>
             <HashRouter hashType="noslash">
-                <Routes/>
+                <I18nProvider>
+                    <Routes/>
+                </I18nProvider>
             </HashRouter>
         </Provider>
         
